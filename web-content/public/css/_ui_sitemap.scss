@@ -1,0 +1,37 @@
+// Stylesheet for site map object on the page
+
+// Push space below the Sitemap
+
+#sitemap-wrapper {
+    margin-bottom: 15px;
+}
+
+// Remove default list formatting
+
+#sitemap {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+
+// Styling for the items of the Sitemap
+
+#sitemap li {
+    background-image: url("https://assets.publishing.service.gov.uk/static/separator-871ef28abf1920b1b8050934ebec4366c18e3cba6ddb704392935e076a7e744d.png");
+    background-position: 100%;
+    background-repeat: no-repeat;
+    padding-right: 15px;
+    margin-right: 15px;
+}
+
+// Remove arrow image from last item of the Sitemap
+
+#sitemap li:last-of-type {
+    background-image: none;
+}
+
+// Float items of the sitemap, displaying horizontal rather than vertical
+
+#sitemap li {
+    float: left;
+}

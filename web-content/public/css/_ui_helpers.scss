@@ -1,0 +1,116 @@
+// Stylesheet containing an assortment of layout helpers
+ 
+html, body, div, h1, h2, h3, h4, h5, h6, p, ul, ol, li, article, aside, footer, header, hgroup, nav, section {
+}
+
+body {
+    margin: 0px;
+}
+
+// Setting up default fonts
+
+p, a, li, td {
+    @include core-16;
+}
+
+th {
+    @include bold-16;
+}
+
+// Content wrapper for site content between the header and footer
+
+#content-wrapper {
+    @extend %site-width-container;
+    margin-top: 10px;
+}
+
+// Helper for setting bold font weighting
+
+.bold {
+    font-weight: 700;
+}
+
+// Helper to centre containers
+
+.centre-block {
+    margin: 0 auto;
+}
+
+// Helpers to float containers
+
+.float-right {
+    text-align: center;
+
+    @include media(tablet) {
+        text-align: right;
+    }
+}
+
+.float-left {
+    text-align: center;
+
+    @include media(tablet) {
+        text-align: left;
+    }
+}
+
+// Clear for after use of floats helpers
+
+.contains-floats {
+    @extend %contain-floats;
+}
+
+// Column presets, allowing for the flexibility to create numerous layouts.
+
+.row {
+    @extend %grid-row;
+}
+
+.column-1 {
+    @include grid-column( 1/12 );
+}
+
+.column-2 {
+    @include grid-column( 2/12 );
+}
+
+.column-3 {
+    @include grid-column( 3/12 );
+}
+
+.column-4 {
+    @include grid-column( 4/12 );
+}
+
+.column-5 {
+    @include grid-column( 5/12 );
+}
+
+.column-6 {
+    @include grid-column( 6/12 );
+}
+
+.column-7 {
+    @include grid-column( 7/12 );
+}
+
+.column-8 {
+    @include grid-column( 8/12 );
+}
+
+.column-9 {
+    @include grid-column( 9/12 );
+}
+
+.column-10 {
+    @include grid-column( 10/12 );
+}
+
+.column-11 {
+    @include grid-column( 11/12 );
+}
+
+.column-full {
+    @include grid-column( 1 );
+}
+

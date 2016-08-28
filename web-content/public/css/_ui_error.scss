@@ -1,0 +1,52 @@
+// Stylesheet for the error pages and error messages
+
+// Error page styling
+
+#error {
+    width: 75%;
+    margin: 0 auto;
+}
+
+#error h1, #error h2, #error a {
+    display: block;
+    width: 100%;
+}
+
+#error h1 {
+    @include bold-36;
+}
+
+#error h2 {
+    @include bold-24;
+}
+
+#error a {
+    @include bold-14;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    margin-top: 15px;
+    padding: 10px;
+    border-top: 2px solid $black;
+}
+
+// Error element styling
+
+#status {
+    display: none;
+}
+
+p.error {
+    display: block;
+    @include bold-16;
+    color: $error-colour;
+}
+
+input.error {
+    outline: 3px solid $error-colour;
+    background-color: $error-background;
+}
+
+input.error:focus {
+    background-color: $error-background;
+}
