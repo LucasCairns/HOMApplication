@@ -26,6 +26,18 @@ app.get('/', function (req, res) {
     });
 });
 
+app.get('/error', function (req, res) {
+    res.render('error', {
+        pageTitle: 'Error'
+    });
+});
+
+app.get('/search', function (req, res) {
+    res.render('search', {
+        pageTitle: 'Search'
+    });
+});
+
 app.get('/applicant/:appId', function (req, res) {   
     res.render('applicant', {
         pageTitle: 'Applicant: Name Here',

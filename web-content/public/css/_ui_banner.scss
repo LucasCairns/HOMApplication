@@ -1,0 +1,28 @@
+// Stylesheet for the banner object
+
+#header-banner-bar {
+    background-color: $org-colour; // org-colour defined in _ui_settings.scss
+    min-height: 10px;
+    color: $white;
+}
+
+#header-banner-bar-content-wrapper {
+    @extend %site-width-container;
+    padding: 20px;
+}
+
+// Font styling for text within the banner
+
+#header-banner-bar-content-wrapper h1 {
+    @include bold-48;
+}
+
+#header-banner-bar p {
+    @include core-14;
+}
+
+#header-banner-bar a {
+    @include bold-14;
+    text-decoration: none;
+    color: $white;
+}

@@ -1,0 +1,62 @@
+// Stylesheet for the page header
+
+// Wrappers
+
+header {
+    display: block;
+    width: 100%;
+    background-color: $black;
+}
+
+#header-wrapper {
+
+    @extend %site-width-container;
+    padding: 0.5em 0px;
+}
+
+#header-wrapper > div {
+    @extend %grid-row;
+}
+
+// Font styling for the header text.
+
+#header-wrapper a {
+    @include bold-27;
+    font-size: 30px;
+    color: $white;
+    text-decoration: none;
+    vertical-align: bottom;
+}
+
+#header-wrapper a:hover {
+    border-bottom: 2px solid $white;
+}
+
+// Logo container
+
+#logo {
+    @include grid-column( 1/3 );
+    margin: 5px 0 2px;
+}
+
+// Logo image styling
+
+#logo img {
+    float: left;
+    width: 35px;
+    height: 31px;
+    padding-right: 6px;
+    line-height: inherit;
+}
+
+// Page title container, centre when on mobile.
+
+#page-title {
+    @include grid-column( 2/3 );
+    text-align: center;
+    margin: 5px 0 2px;
+
+    @include media(tablet) {
+        text-align: inherit;
+    }
+}
