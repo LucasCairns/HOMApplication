@@ -1,0 +1,2 @@
+C:\Users\Luke\Desktop\visual studio 2015\Projects\HOMApplication\HOMApplication\obj\Debug\HOMApplication.njsprojResolveAssemblyReference.cache
+C:\Users\Luke\Desktop\visual studio 2015\Projects\HOMApplication\HOMApplication\bin\Microsoft.NodejsTools.WebRole.dll

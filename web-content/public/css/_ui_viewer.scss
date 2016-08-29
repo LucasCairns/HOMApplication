@@ -7,7 +7,7 @@
 #viewer-header {
     @extend %grid-row;
     margin: 0px;
-    background-color: $grey-1;
+    background-color: $org-colour;
     color: $white;
     padding: 10px;
 }
@@ -91,11 +91,12 @@
 
 #viewer-content tbody tr {
     border-bottom: 1px solid $grey-2;
-}
-
-#viewer-content tbody tr:nth-last-of-type(2n) {
     background-color: $grey-4;
 }
+
+//#viewer-content tbody tr:nth-last-of-type(2n) {
+//    background-color: $grey-4;
+//}
 
 #viewer-content th {
     background-color: $grey-2;
@@ -103,6 +104,7 @@
 }
 
 #viewer-content td {
+    box-sizing: border-box;
     display: block;
 
     @include media(tablet) {
@@ -122,7 +124,7 @@
 #viewer-footer {
     @extend %grid-row;
     margin: 0px;
-    background-color: $grey-1;
+    background-color: $org-colour;
     color: $white;
     padding: 10px;
 }
@@ -143,12 +145,13 @@
 
 // Applicant list
 
-#app-list td:last-of-type  a{
+#app-list td:last-of-type a {
     display: block;
     text-align: center;
     text-decoration: none;
     @include bold-16;
     color: $black;
+    margin-top: 10px;
 
     @include media(tablet) {
         display: table-cell;
@@ -157,18 +160,27 @@
     }
 }
 
-#app-list td:first-of-type {
+#app-list td {
     display: block;
-    background-color: $grey-2;
-    @include bold-16;
+    width: 50%;
+    float: left;
 
     @include media(tablet) {
-        background-color: inherit;
         display: table-cell;
         width: auto;
-        @include core-16;
+        float: inherit;
     }
 }
+
+
+#app-list td:first-of-type, #app-list td:last-of-type {
+    width: 100%;
+
+    @include media(tablet) {
+        width: auto;
+    }
+}
+
 
 #app-list thead, #app-details thead {
     display: none;
@@ -183,3 +195,62 @@
 #app-employment {
     margin-top: 10px;
 }
+
+.app-employment-element td {
+    width: auto;
+
+    @include media(tablet) {
+        width: 25%;
+    }
+}
+
+.app-employment-element th {
+    width: auto;
+
+    @include media(tablet) {
+        width: 25%;
+    }
+}
+
+.app-employment-element thead {
+    display: none;
+
+    @include media(tablet) {
+        display: table-header-group;
+    }
+}
+
+.app-employment-element td {
+    display: block;
+
+    @include media(tablet) {
+        display: table-cell;
+    }
+}
+
+p.sidelabel, p.label {
+    width: auto;
+    border-bottom: 1px solid $grey-3;
+    @include bold-16;
+    padding: 0 0 5px 0;
+}
+
+p.sidelabel {
+    display: block;
+
+    @include media(tablet) {
+        display: none;
+    }
+}
+
+td.split {
+    display: block;
+    width: 50%;
+    float: left;
+
+    @include media(tablet) {
+        display: table-cell;
+        width: auto;
+        float: inherit;
+    }
+} 

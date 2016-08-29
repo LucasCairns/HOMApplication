@@ -2,7 +2,7 @@
     <div id="viewer-header">
         <div>
             <h2>Viewing jobs</h2>
-            <p id="status">(STATUS)</pid="status">
+            <p id="status">(STATUS)</p>
         </div>
         <div id="viewer-search-tools">
             <div>
@@ -28,24 +28,14 @@
                 </tr>
             </thead>
             <tbody>
+                <% for(var i = 0; i < jobs.length; i++){ %>
                 <tr>
-                    <td>(ID)</td>
-                    <td>(JOB)</td>
-                    <td>(CLOSE DATE)</td>
-                    <td><a href="#">(VIEW)</a></td>
+                    <td><p class="sidelabel">Job ID</p><%= jobs[i].ID %></td>
+                    <td><p class="sidelabel">Job Title</p><%= jobs[i].Title %></td>
+                    <td><p class="sidelabel">Closing Date</p><%= jobs[i].CloseDate %></td>
+                    <td><a href="/applicants/<%= jobs[i].ID %>">View Applicants</a></td>
                 </tr>
-                <tr>
-                    <td>(ID)</td>
-                    <td>(JOB)</td>
-                    <td>(CLOSE DATE)</td>
-                    <td><a href="#">(VIEW)</a></td>
-                </tr>
-                <tr>
-                    <td>(ID)</td>
-                    <td>(JOB)</td>
-                    <td>(CLOSE DATE)</td>
-                    <td><a href="#">(VIEW)</a></td>
-                </tr>
+                <% } %>
             </tbody>
         </table>
     </div>

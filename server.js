@@ -1,51 +1,42 @@
-﻿var express = require('express');
+﻿// Includes
+
+var express = require('express');
 
 var url = require('url');
 
+var applicationRouter = require('./src/applicationRoutes');
+
+// Variable declarations
+
 var app = express();
 
-var port = 8080;
+var port = process.env.PORT || 8080;
+
+// Use .html extension rather than .ejs
 
 app.engine('.html', require('ejs').__express);
 
+// Set static public directory, containing css/js/images
+
 app.use(express.static(__dirname + '/web-content/public'));
+
+// Set Views directory
 
 app.set('views', __dirname + '/web-content/views');
 
 app.set('view engine', 'html');
 
-function createSiteMap(req) {
-    var path = url.parse(req.url).pathname.split("/");
-    var jsonSiteMap = [{ text: 'Home', link: '/' }];
-    return jsonSiteMap;
-}
+// Declare Router object
 
-app.get('/', function (req, res) {
-    res.render('index', {
-        pageTitle: 'Index'
-    });
-});
+var applicantRouter = express.Router();
 
-app.get('/error', function (req, res) {
-    res.render('error', {
-        pageTitle: 'Error'
-    });
-});
+// Use the applicantRouter as the default router
 
-app.get('/search', function (req, res) {
-    res.render('search', {
-        pageTitle: 'Search'
-    });
-});
+app.use('/', applicationRouter);
 
-app.get('/applicant/:appId', function (req, res) {   
-    res.render('applicant', {
-        pageTitle: 'Applicant: Name Here',
-        siteMap: createSiteMap(req)
-    });
-});
+// Listen on port 8080
 
 if (!module.parent) {
-    app.listen(8080);
-    console.log('EJS engine server initialised on port 8080');
+    app.listen(port);
+    console.log('EJS engine server initialised on port: ' + port);
 }
