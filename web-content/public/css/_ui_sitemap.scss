@@ -30,6 +30,18 @@
     background-image: none;
 }
 
+// Set font styling
+
+#sitemap li a {
+    text-decoration: none;
+    color: $black;
+}
+
+#sitemap li:only-child a, #sitemap li:last-of-type a {
+    font-weight: 700;
+}
+
+
 // Float items of the sitemap, displaying horizontal rather than vertical
 
 #sitemap li {

@@ -1,10 +1,10 @@
 {
   "name": "homapplication",
-  "version": "0.0.0",
+  "version": "0.2.0",
   "description": "HOMApplication",
   "main": "server.js",
   "author": {
-    "name": "Luke"
+    "name": "Lucas Cairns"
   },
   "dependencies": {
     "bower": "^1.7.9",
