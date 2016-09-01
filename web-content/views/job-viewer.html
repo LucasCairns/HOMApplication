@@ -2,13 +2,12 @@
     <div id="viewer-header">
         <div>
             <h2>Viewing jobs</h2>
-            <p id="status">(STATUS)</p>
         </div>
         <div id="viewer-search-tools">
             <div>
-                <form action="">
+                <form action="" method="get" name="filter">
                     <div class="row">
-                        <div class="column-6"><label for="job_id">Job ID</label> <input type="text" name="job_id"></div>
+                        <div class="column-6"><label for="JobId">Job ID</label><input type="text" size="11" name="JobId" value="<% if(JobId){%><%=JobId%><%}%>" class="okay"></div>
                     </div>
                     <div class="row">
                         <div class="column-full"><input type="submit" value="Filter"></div>
@@ -28,18 +27,18 @@
                 </tr>
             </thead>
             <tbody>
-                <% for(var i = 0; i < jobs.length; i++){ %>
+                <% for(var i in jobs){ %>
                 <tr>
                     <td><p class="sidelabel">Job ID</p><%= jobs[i].ID %></td>
                     <td><p class="sidelabel">Job Title</p><%= jobs[i].Title %></td>
                     <td><p class="sidelabel">Closing Date</p><%= jobs[i].CloseDate %></td>
-                    <td><a href="/applicants/<%= jobs[i].ID %>">View Applicants</a></td>
+                    <td><a href="/applicants/<%= jobs[i].ID.replace(/\//g, '-') %>">View Applicants</a></td>
                 </tr>
                 <% } %>
             </tbody>
         </table>
     </div>
     <div id="viewer-footer">
-        <div><p>Showing (SHOWN)/(TOTAL) applicants for (JOBID) filtered by (FILTER).</p></div>
+        <div><p>Showing <%= jobs.length %>  jobs <%= FilterText %></p></div>
     </div>
 </div>

@@ -2,8 +2,8 @@
     <div id="viewer-header">
         <div>
             <div class="row">
-                <div class="column-10"><h2>Viewing details for applicant <%= ID %></h2><p>(JOB TITLE) - <%= jobId %></p></div>
-                <div class="column-2 float-right"><a href="/applicants/<%= jobId %>">Close</a></div>
+                <div class="column-10"><h2>Viewing details for <%= Name %> <%= Surname %></h2><p>Application for <%= JobTitle %></p></div>
+                <div class="column-2 float-right"><a href="/applicants/<%= JobId.replace(/\//g, '-')  %>">Close</a></div>
             </div>
         </div>
     </div>
@@ -19,10 +19,10 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><p class="sidelabel">Applicant ID</p><%= ID %></td>
+                    <td><p class="sidelabel">Applicant ID</p><%= AppId %></td>
                     <td class="split"><p class="sidelabel">Name</p><%= Name %></td>
                     <td class="split"><p class="sidelabel">Surname</p><%= Surname %></td>
-                    <td><p class="sidelabel">Date of Birth</p><%= DOB %></td>
+                    <td class="split"><p class="sidelabel">Date of Birth</p><%= DOB %></td>
                 </tr>
             </tbody>
         </table>
@@ -33,7 +33,7 @@
                 </tr>
             </thead>
             <tbody>
-                <% for(var i = 0; i < workExperience.length; i++){ %>
+                <% for(var i in workExperience){ %>
                 <tr>
                     <td>
                         <table class="app-employment-element">
