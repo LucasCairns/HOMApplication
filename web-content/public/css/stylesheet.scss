@@ -1,10 +1,10 @@
 // Main stylesheet for the web application
 
 // Import GOVUK Frontend SCSS
-@import "_colours.scss";
-@import "_grid_layout.scss";
-@import "_typography.scss";
-@import "design-patterns/_buttons.scss";
+@import "../../../node_modules/govuk_frontend_toolkit/stylesheets/_colours.scss";
+@import "../../../node_modules/govuk_frontend_toolkit/stylesheets/_grid_layout.scss";
+@import "../../../node_modules/govuk_frontend_toolkit/stylesheets/_typography.scss";
+@import "../../../node_modules/govuk_frontend_toolkit/stylesheets/design-patterns/_buttons.scss";
 // Import project SCSS
 @import "_ui_settings";
 @import "_ui_helpers.scss";

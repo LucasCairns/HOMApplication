@@ -1,0 +1,21 @@
+{
+  "name": "homapplication",
+  "description": "HOMApplication",
+  "main": "server.js",
+  "authors": [
+    "Lucas Cairns"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/LucasCairns/HOMApplication",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.1.0"
+  }
+}

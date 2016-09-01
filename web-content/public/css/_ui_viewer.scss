@@ -61,12 +61,11 @@
 #viewer-search-tools input[type=text] {
     box-sizing: border-box;
     padding: 4px;
-    border: 2px solid $grey-2;
 }
 
-#viewer-search-tools input[type=text]:focus {
-    outline: 3px solid $focus-colour;
-}
+//#viewer-search-tools input[type=text]:focus {
+//    outline: 3px solid $focus-colour;
+//}
 
 // Viewer content styling
 
@@ -172,8 +171,29 @@
     }
 }
 
+#app-list td:first-of-type, #app-details td:first-of-type {
+    background-color: $grey-2;
+    width: 100%;
+    font-weight: 700;
 
-#app-list td:first-of-type, #app-list td:last-of-type {
+    @include media(tablet) {
+        background-color: inherit;
+        width: auto;
+        color: inherit;
+        font-weight: inherit;
+    }
+}
+
+#app-list td:first-of-type p, #app-details td:first-of-type p {
+    float: left;
+    margin: 0;
+    margin-right: 10px;
+    border: none;
+}
+
+
+
+#app-list td:last-of-type {
     width: 100%;
 
     @include media(tablet) {

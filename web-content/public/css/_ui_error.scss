@@ -36,17 +36,14 @@
     display: none;
 }
 
-p.error {
-    display: block;
-    @include bold-16;
-    color: $error-colour;
+input.okay:focus {
+    outline: 3px solid $focus-colour;
 }
 
 input.error {
-    outline: 3px solid $error-colour;
-    background-color: $error-background;
+    border: 2px solid $error-colour;
 }
 
 input.error:focus {
-    background-color: $error-background;
+    outline: 3px solid $error-colour;
 }

@@ -1,15 +1,15 @@
 <div id="viewer">
     <div id="viewer-header">
         <div>
-            <h2>Viewing applicants for job <%= jobId %></h2>
+            <h2>Viewing applicants for <%= JobTitle %></h2>
             <p id="status">(STATUS)</p>
         </div>
         <div id="viewer-search-tools">
             <div>
-                <form action="">
+                <form action="" method="get">
                     <div class="row">
-                        <div class="column-6"><label for="app_id">ID</label> <input type="text" name="app_id"></div>
-                        <div class="column-6"><label for="app_surname">Surname</label> <input type="text" name="app_surname" /></div>
+                        <div class="column-6"><label for="AppId">ID</label> <input type="text" name="AppId" value="<% if(AppId){%><%=AppId%><%}%>"></div>
+                        <div class="column-6"><label for="AppSurname">Surname</label> <input type="text" name="AppSurname" value="<% if(AppSurname){%><%=AppSurname%><%}%>" /></div>
                     </div>
                     <div class="row">
                         <div class="column-full"><input type="submit" value="Filter"></div>
@@ -29,18 +29,18 @@
                 </tr>
             </thead>
             <tbody>
-                <% for(var i = 0; i < applicants.length; i++){ %>
+                <% for(var i in Applicants){ %>
                 <tr>
-                    <td><p class="sidelabel">Applicant ID</p><%= applicants[i].ID %></td>
-                    <td class="split"><p class="sidelabel">Name</p><%= applicants[i].Name %></td>
-                    <td class="split"><p class="sidelabel">Surname</p><%= applicants[i].Surname %></td>
-                    <td><a href="/applicants/<%= jobId %>/view/<%= applicants[i].ID %>">View</a></td>
+                    <td><p class="sidelabel">Applicant ID</p><%= Applicants[i].ID %></td>
+                    <td class="split"><p class="sidelabel">Name</p><%= Applicants[i].Name %></td>
+                    <td class="split"><p class="sidelabel">Surname</p><%= Applicants[i].Surname %></td>
+                    <td><a href="/applicants/<%= JobId.replace(/\//g, '-') %>/view/<%= Applicants[i].ID.replace(/\//g, '-') %>">View</a></td>
                 </tr>
                 <% } %>
             </tbody>
         </table>
     </div>
     <div id="viewer-footer">
-        <div><p>Showing (SHOWN)/(TOTAL) applicants for (JOBID) filtered by (FILTER).</p></div>
+        <div><p>Showing <%= Applicants.length %> applicants for Job ID <%= JobId %> <%= FilterText %></p></div>
     </div>
 </div>

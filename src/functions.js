@@ -18,16 +18,14 @@ exports.createSiteMap = function (req) {
     var token = '';
     for (var i = 1; i < path.length; i++) {
         if (path[i] != '') {
-            if (isNaN(path[i])) { // if path[i] is not a number, set token
+            // Using page->param paired nature of the url, use modulus to process page names and params differently, push back in to the sitemap after each pair
+            if (i % 2) {    // if even (page), set token
                 token = initCap(path[i]);
-            }
-            if (!isNaN(path[i])) { // if path[i] is a number, generate the link and push in to jsonSiteMap
+            } else {           // if odd (param), generate the link and push in to jsonSiteMap
                 for (var j = 1; j <= i; j++) {
                     link += '/';
                     link += path[j];
                 }
-                // Debug
-                //console.log('Pushing to jsonSiteMap, text = ' + token + ' link = ' + link);
                 jsonSiteMap.push({
                     text: token, link: link
                 });
@@ -35,18 +33,15 @@ exports.createSiteMap = function (req) {
             }
         }
     }
-    // Debug
-    //console.log('var path = ' + path);
-    //console.log('var jsonSiteMap = ' + JSON.stringify(jsonSiteMap));
     return jsonSiteMap;
 }
 
 // Function to render error pages
 
-exports.errorPage = function(res, code, message) {
-    return res.render('error', {
-        pageTitle: Error + " - " + code,
-        errorCode: code,
-        errorMessage: message
-    })
+exports.errorPage = function (res, code, message, err) {
+        res.render('error', {
+            pageTitle: Error + " - " + code,
+            errorCode: code,
+            errorMessage: message
+        })
 }
