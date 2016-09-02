@@ -1,6 +1,7 @@
 ﻿# HOMApplication
 
 HOM/1079/16 - Junior Developer – Assessment
+
 Ref – 1501637
 
 About the application.
@@ -13,11 +14,13 @@ and Jasmine has been used alongside Request for testing of functions in the Node
 Installation
 
 Node.js
-	Node.js can be downloaded from 
-		https://nodejs.org/en/download/current/
+
+	Node.js can be downloaded from
+	        https://nodejs.org/en/download/current/
 	Download and install the latest executable.
 
 MongoDB
+
 	MongoDB can be downloaded from
 		http://www.mongodb.org/downloads
 	Download and install the latest executable, create the following folders on the root of your C:\ drive.
@@ -33,6 +36,7 @@ MongoDB
 		Use <Database Name>
 
 Install Project from GitHub
+
 	Install the application directly from GitHub, do this using the Node.js executable and installing via Node Package Manager using the command
 		npm install LucasCairns/HOMApplication –g
 	The package will download and install on your machine, you can find the installation directory of the application by using the command.
@@ -45,6 +49,7 @@ Install Project from GitHub
 		http://localhost:8080
 
 Configuration
+
 	The application can be configured by navigating to the root directory and editing the config.json file.
 		{
 		  "port": 8080,
