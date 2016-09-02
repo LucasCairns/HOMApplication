@@ -4,7 +4,7 @@
   "description": "HOMApplication - Applicant Viewer for Junior Developer Job",
   "main": "application.js",
   "scripts": {
-    "start": "node appplication.js",
+    "start": "node application.js",
     "test": "node_modules/.bin/jasmine-node spec"
   },
   "author": {
