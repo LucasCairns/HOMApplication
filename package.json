@@ -1,8 +1,12 @@
 {
   "name": "homapplication",
-  "version": "0.4.0",
-  "description": "HOMApplication - Applicant Viewer",
+  "version": "1.0.0",
+  "description": "HOMApplication - Applicant Viewer for Junior Developer Job",
   "main": "application.js",
+  "scripts": {
+    "start": "node appplication.js",
+    "test": "node_modules/.bin/jasmine-node spec"
+  },
   "author": {
     "name": "Lucas Cairns"
   },
@@ -10,7 +14,15 @@
     "bower": "^1.7.9",
     "ejs": "^2.5.1",
     "express": "^4.14.0",
-    "govuk_frontend_toolkit": "^4.16.1",
+    "govuk_frontend_toolkit": "^4.17.0",
     "mongodb": "^2.2.9"
+  },
+  "devDependencies": {
+    "jasmine-node": "^1.14.5",
+    "request": "^2.74.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LucasCairns/HOMApplication.git"
   }
 }

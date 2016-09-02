@@ -21,7 +21,7 @@
 }
 
 #error a {
-    @include bold-14;
+    @include bold-16;
     text-decoration: none;
     text-align: center;
     color: black;
@@ -32,8 +32,10 @@
 
 // Error element styling
 
-#status {
+span.status {
+    @include bold-14;
     display: none;
+    margin: 0;
 }
 
 input.okay:focus {

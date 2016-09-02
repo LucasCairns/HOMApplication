@@ -1,0 +1,45 @@
+<div id="viewer">
+    <div id="viewer-header">
+        <div>
+            <h2>Viewing applicants for <%= jobTitle %></h2>
+        </div>
+        <div id="viewer-search-tools">
+            <div>
+                <form action="" method="get">
+                    <div class="row">
+                        <div class="column-6"><label for="AppId">ID</label> <input type="text" size="11"name="AppId" value="<% if(appId){%><%=appId%><%}%>"></div>
+                        <div class="column-6"><label for="AppSurname">Surname</label> <input type="text" size="35" name="AppSurname" value="<% if(appSurname){%><%=appSurname%><%}%>" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="column-full"><input type="submit" value="Filter"><span class="status"></span></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="viewer-content">
+        <table id="app-list">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(var i in applicants){ %>
+                <tr>
+                    <td><%= applicants[i].ID %></td>
+                    <td class="split"><p class="sidelabel">Name</p><%= applicants[i].Name %></td>
+                    <td class="split"><p class="sidelabel">Surname</p><%= applicants[i].Surname %></td>
+                    <td><a href="/applicants/<%= jobId.replace(/\//g, '-') %>/view/<%= applicants[i].ID.replace(/\//g, '-') %>">View</a></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    <div id="viewer-footer">
+        <div><p>Showing <%= applicants.length %> applicants for <%= jobId %> <%= filterText %></p></div>
+    </div>
+</div>

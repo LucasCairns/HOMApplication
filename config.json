@@ -1,0 +1,7 @@
+﻿{
+  "port": 8080,
+  "databaseUrl": "mongodb://localhost:27017/HOMApplication",
+  "databaseJobCollection": "jobs",
+  "databaseApplicantCollection": "applicants",
+  "testEnvironment": false
+}

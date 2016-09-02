@@ -1,6 +1,8 @@
 ﻿// Includes
 
 var url = require('url');
+var mongodb = require('mongodb').MongoClient;
+var config = require('../config.json');
 
 // Helper function to initialize the leading character of a string
 function initCap(str) {
@@ -44,4 +46,59 @@ exports.errorPage = function (res, code, message, err) {
             errorCode: code,
             errorMessage: message
         })
+}
+
+// Database URL
+
+var database = config.databaseUrl;
+
+// Query database, return many records in json array.
+
+exports.databaseFindMany = function (collectionName, query, projection, callback) {
+
+    //Connect to database
+    mongodb.connect(database, function (err, db) {
+        if (!err) { // Check for an error connecting to the database
+            var collection = db.collection(collectionName); // Access collection
+            collection.find(query, projection).toArray( // Query collection
+                function (err, results) {
+                    if (!err) {
+                        db.close();
+                        callback(results);
+                    } else {
+                        // Display error page if unable to access collection
+                        errorPage(res, 500, 'Error accessing collection', err);
+                        db.close();
+                    }
+                });
+        } else {
+            // Display error page if unable to access database
+            errorPage(res, 500, 'Unable to connect to database', err);
+        }
+    });
+}
+
+// Query database, return a record as json object
+
+exports.databaseFindOne = function(collectionName, query, projection, callback) {
+    //Connect to database
+    mongodb.connect(database, function (err, db) {
+        if (!err) { // Check for an error connecting to the database
+            var collection = db.collection(collectionName); // Access collection
+            collection.findOne(query, projection, // Query collection
+                function (err, result) {
+                    if (!err) {
+                        db.close();
+                        callback(result);
+                    } else {
+                        // Display error page if unable to access collection
+                        errorPage(res, 500, 'Error accessing collection', err);
+                        db.close();
+                    }
+                });
+        } else {
+            // Display error page if unable to access database
+            errorPage(res, 500, 'Unable to connect to database', err);
+        }
+    });
 }

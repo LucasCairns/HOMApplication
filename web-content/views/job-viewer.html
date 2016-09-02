@@ -7,10 +7,10 @@
             <div>
                 <form action="" method="get" name="filter">
                     <div class="row">
-                        <div class="column-6"><label for="JobId">Job ID</label><input type="text" size="11" name="JobId" value="<% if(JobId){%><%=JobId%><%}%>" class="okay"></div>
+                        <div class="column-6"><label for="JobId">Job ID</label><input type="text" size="11" name="JobId" value="<% if(jobId){%><%=jobId%><%}%>" class="okay"></div>
                     </div>
                     <div class="row">
-                        <div class="column-full"><input type="submit" value="Filter"></div>
+                        <div class="column-full"><input type="submit" value="Filter"><span class="status"></span></div>
                     </div>
                 </form>
             </div>
@@ -29,7 +29,7 @@
             <tbody>
                 <% for(var i in jobs){ %>
                 <tr>
-                    <td><p class="sidelabel">Job ID</p><%= jobs[i].ID %></td>
+                    <td><%= jobs[i].ID %></td>
                     <td><p class="sidelabel">Job Title</p><%= jobs[i].Title %></td>
                     <td><p class="sidelabel">Closing Date</p><%= jobs[i].CloseDate %></td>
                     <td><a href="/applicants/<%= jobs[i].ID.replace(/\//g, '-') %>">View Applicants</a></td>
@@ -39,6 +39,6 @@
         </table>
     </div>
     <div id="viewer-footer">
-        <div><p>Showing <%= jobs.length %>  jobs <%= FilterText %></p></div>
+        <div><p>Showing <%= jobs.length %>  jobs <%= filterText %></p></div>
     </div>
 </div>

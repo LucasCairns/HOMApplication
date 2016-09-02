@@ -1,10 +1,9 @@
 ﻿// Includes
-
 var express = require('express');
 var test = require('assert');
 var mongodb = require('mongodb').MongoClient;
 
-// Test Data
+//---Start of test data------------------------------------------------------------------------
 
 // Sample Job JSON
 
@@ -202,6 +201,8 @@ var applicants = [{
         }]
     }];
 
+//---End of test data--------------------------------------------------------------------------
+
 exports.injectTestData = function () {
 
             // MongoDB database url
@@ -211,6 +212,7 @@ exports.injectTestData = function () {
             mongodb.connect(url, function (err, db) {
                 if (!err) { // Check for an error connecting to the database
                         console.log('Successfully connected to database, preparing to inject test data in to collection (applicants)');
+
                         // Initialize collection variable
                         var collection = db.collection('applicants');
 
@@ -237,6 +239,7 @@ exports.injectTestData = function () {
             mongodb.connect(url, function (err, db) {
                 if (!err) { // Check for an error connecting to the database
                         console.log('Successfully connected to database, preparing to inject test data in to collection (jobs)');
+
                         // Initialize collection variable
                         var collection = db.collection('jobs');
 

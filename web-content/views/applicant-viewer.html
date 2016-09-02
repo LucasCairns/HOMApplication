@@ -2,8 +2,8 @@
     <div id="viewer-header">
         <div>
             <div class="row">
-                <div class="column-10"><h2>Viewing details for <%= Name %> <%= Surname %></h2><p>Application for <%= JobTitle %></p></div>
-                <div class="column-2 float-right"><a href="/applicants/<%= JobId.replace(/\//g, '-')  %>">Close</a></div>
+                <div class="column-10"><h2>Viewing details for <%= name %> <%= surname %></h2><p>Application for <%= jobTitle %></p></div>
+                <div class="column-2 float-right"><a href="/applicants/<%= jobId.replace(/\//g, '-')  %>">Close</a></div>
             </div>
         </div>
     </div>
@@ -19,9 +19,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td><p class="sidelabel">Applicant ID</p><%= AppId %></td>
-                    <td class="split"><p class="sidelabel">Name</p><%= Name %></td>
-                    <td class="split"><p class="sidelabel">Surname</p><%= Surname %></td>
+                    <td><%= appId %></td>
+                    <td class="split"><p class="sidelabel">Name</p><%= name %></td>
+                    <td class="split"><p class="sidelabel">Surname</p><%= surname %></td>
                     <td class="split"><p class="sidelabel">Date of Birth</p><%= DOB %></td>
                 </tr>
             </tbody>
